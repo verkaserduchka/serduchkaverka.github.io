@@ -39,7 +39,7 @@
         }
 
         function F2() {
-            
+            var black=0,white=0;
             var a = document.getElementById("a");
             var c = a.getContext("2d");
 
@@ -52,9 +52,17 @@
                     var b = imgData[2];
                    
 
-                    console.log(r,g,b);
+                    //console.log(r,g,b);
+
+                    if (r==255) {
+                        white++;
+                    }
+                    else {
+                        black++;
+                    }
 
                 }
+console.log (black, white)
             }
 
             for (var i = 0; i <= 70; i++) {
