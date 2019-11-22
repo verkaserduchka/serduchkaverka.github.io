@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <canvas id="a" width="640" height="480"></canvas>
+    <button onclick="F1()">OK</button>
+    <button onclick="F2()">OK</button>
+
+    <script>
+
+         
+             
+
+            function F1() {
+                
+                a = document.getElementById("a");
+             c = a.getContext("2d");
+    
+            
+
+
+            // Создаем объект изображения
+            var img = new Image();
+
+            // Привязываем функцию к событию onload
+            // Это указывает браузеру, что делать, когда изображение загружено
+            img.onload = function () {
+                c.drawImage(img, 0, 0);
+            };
+
+
+            // Загружаем файл изображения
+            img.src = "2.bmp";
+
+            for (var i = 0; i <= 30; i++) {
+                for (var j = 0; j <= 30; j++) {
+
+                    var imgData = c.getImageData(i, j, 1, 1).data;
+                    var r = imgData[0];
+                    var g = imgData[1];
+                    var b = imgData[2];
+                   
+
+                    console.log(r,g,b);
+
+                }
+            }
+        }
+
+        // function F2() {
+            
+        //     var a = document.getElementById("a");
+        //     var c = a.getContext("2d");
+
+        //     for (var i = 0; i <= 300; i++) {
+        //         for (var j = 0; j <= 300; j++) {
+
+        //             var p = c.createImageData(1, 1);
+        //             p.data[0] = 255;
+        //             p.data[1] = 0;
+        //             p.data[2] = 0;
+        //             p.data[3] = 155;
+        //             c.putImageData(p, i, j);
+
+        //         }
+        //     }
+
+        // }
+
+    </script>
+</body>
+
+</html>
